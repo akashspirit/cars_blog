@@ -1,0 +1,59 @@
+{% include 'base.html' %}
+{% block content %}
+ 
+<div class="container">
+
+    <style>
+        h1 {
+    text-decoration: underline;
+}
+.container {
+    width: 35%;
+    
+    margin-top: 46px;
+}
+.n {
+    float: right;
+}
+.container {
+    width: 35%;
+    margin-top: 100px;
+    box-shadow: 10px 10px 40px black;
+    border-radius: 20px;
+    display: table;
+    padding: 50px;
+    backdrop-filter: blur(7px);
+}
+    </style>
+
+     <h1 class="text-center">LOGIN HERE</h1>
+     
+     <form action="" method="post">
+        {% csrf_token %}
+         
+         <label for="">Username</label>
+         <input type="Username" name="Username" class="form-control" placeholder="ENTER USERNAME">
+         <label for="">Password</label>
+         <input type="Password" name="Password" class="form-control" placeholder="ENTER PASSWORD"><br>
+         
+         <div class="text-center">
+
+             <input type="submit" value="LOGIN" class="btn btn-success">
+
+        </div>
+<br>
+<div class="n">
+
+    If you Don't Have An Account <a href="{% url 'register' %}">Click Here</a>
+</div>
+         <div>
+            {% for i in messages %}
+    {{i}}
+    {% endfor %}
+         </div>
+        </form>
+    </div>
+        
+        {% endblock %}
+        
+        

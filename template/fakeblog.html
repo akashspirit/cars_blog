@@ -1,0 +1,123 @@
+{% include 'base.html' %}
+{% block content %}
+
+
+<style>
+
+    
+    
+    h2 {
+    text-align: center;
+    }
+    h4{
+        text-align: right;
+    }
+    h5{
+        text-align: right;
+    }
+    body{
+        background-image: url('https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?w=2000');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    
+    img.card-img-top {
+    height: 328px;
+    object-fit: cover;
+/* }
+.container{
+    margin-top: 50px; */
+
+}
+/* .card {
+    margin-top: 20px; */
+/*     
+} */
+.col-lg-3 {
+    margin-top: 42px;
+}
+.img{
+    transition: 0.5s;
+    border-radius: 15px;
+    box-shadow: 9px 8px 20px 0px black;
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    display: table;
+    margin: auto;
+}
+.img:hover{
+    transform: scale(1.1);
+    box-shadow: 9px 8px 40px 0px black;
+}
+h6.text-center.card-title {
+    font-size: 34px;
+    margin-top: 30px;
+    font-style: italic;
+}
+a.k {
+    margin-left: 61px;
+}
+.card-title{
+    margin-top: 20px;
+}
+.cardtitle{
+    /* background-color: red; */
+    margin-top: 100px;
+}
+.k a{
+    margin-top: 20px;
+    
+}
+.k{
+    margin-top: 20px;
+    bottom: 0;
+}
+.container{
+    height: 100%;
+    
+    
+/* }
+.cardd{
+    height: 100%;
+    margin-top: 50px; */
+    
+   
+}
+h6.text-center.card-title.cardtitle {
+    font-weight: bold;
+}
+h6.text-center.card-title.cardtitle {
+    font-style: inherit;
+}
+
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        {% for i in data %}
+        <div class="col-lg-3">
+            <div class="" >
+                <a href="{% url 'MoreInfo' i.id %}"  > <img src="{{i.image.url}}" class="card-img-top img" alt="..."></a> 
+                <div class="card-body">
+                    <div class="k">
+
+                        <h6 class="text-center card-title cardtitle">{{i.title}}</h6>
+
+                        
+                        <a href="{% url 'MoreInfo' i.id %}" class="k">Read About {{i.title}}</a>
+                    </div>
+
+              
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+
+</div>
+{% endblock %}
+{% include 'footer.html' %}

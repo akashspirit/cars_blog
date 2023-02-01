@@ -1,0 +1,60 @@
+{% include 'base.html' %}
+{% block content %}
+<style>
+    p.card-text {
+    color: #090909;
+}
+img.card-img-top {
+    width: 50%;
+    display: table;
+    margin: auto;
+}
+a {
+    float: right;
+}
+h1.text-center {
+    text-decoration: underline;
+}
+img.card-img-top {
+    border-radius: 20px;
+}
+img.card-img-top {
+    width: 100%;
+}
+p.card-text {
+    margin-top: 105px;
+}
+h1.text-center {
+    margin-top: 31px;
+}
+</style>
+ 
+
+
+<div class="container">
+    <div class="row">
+
+        
+        <div class="col-lg-4">
+             
+    <h1 class="text-center"> <data class="title">{{data.title}}</data> </h1>
+    <img src="{{ data.image.url }}" class="card-img-top" width="50%" alt="..."><br>
+        </div>
+        <div class="col-lg-8">
+            <p class="card-text">{{ data.description }}</p>
+            <h5>{{data.upload_by}}</h5>
+            {{user.username}}
+            {% if user.username == data.upload_by %}
+        
+                <a href="{% url 'delete' data.id %}" class="bta bta-danger"><i class="material-icons" style="font-size:36px">delete</i>
+                    
+                    <a href="{% url 'edit' data.id %}"><i class="material-icons" style="font-size:36px">border_color</i></a>
+                
+                    {% else  %}
+                    {% endif %}
+            </a>
+    </div>
+</div>
+</div>
+{% endblock %}
+

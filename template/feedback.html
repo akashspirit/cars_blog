@@ -1,0 +1,36 @@
+{% include 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+
+<style>
+    h1 {
+    text-decoration: underline;
+}
+textarea#id_description {
+    border: 3px solid skyblue;
+}
+input#id_upload_by {
+    border: 3px solid skyblue;
+}
+
+</style>
+
+    <div class="container">
+
+        <h1 class="text-center" >Feedback</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+
+        <div class="text-center">
+
+            {{form|crispy}}<br>
+            <input type="submit" value="submit" class= "btn btn-success">
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+{% include 'footer.html' %}

@@ -1,0 +1,52 @@
+{% include 'base.html' %}
+{% block content %}
+
+<div class="container r">
+
+    <div class="h">
+        <style>
+            h1 {
+    text-decoration: underline;
+}
+.container {
+    width: 60%;
+    margin-top: 60px;
+    box-shadow: 10px 10px 40px black;
+    border-radius: 20px;
+    display: table;
+    padding: 50px;
+    backdrop-filter: blur(7px);
+}
+        </style>
+
+        <h1 class="text-center" >REGISTER HERE</h1>
+    </div>
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <label for="">Username</label>
+        <input type="Username" name="username" class="form-control" placeholder="ENTER USERNAME" >
+        <label for="Email">EMAIL</label>
+        <input type="Email" name="email" class="form-control" placeholder="ENTER EMAIL">
+        <label for="Password">Password</label>
+        <input type="Password" name="password" class="form-control" placeholder="ENTER PASSWORD">
+        <label for="Comfirm_Password">Confirm Password</label>
+        <input type="Password" name="comfirm_password" class="form-control" placeholder="ENTER CONFIRM PASSWORD"><br>
+        <div class="text-center">
+
+            <input type="submit" value="SUBMIT" class="btn btn-success " ><br>
+        </div>
+        
+    </form><br>
+    <div class="new">
+
+        If you have already an account  <a href="{% url 'login' %}">Click here</a>
+    </div>
+    {% for i in messages %}
+    {{i}}
+    {% endfor %}
+</div>
+
+
+{% endblock %}
