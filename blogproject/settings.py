@@ -125,6 +125,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = 'ststicfiles/'
+
 cloudinary.config( 
   cloud_name = "dcptmedhd", 
   api_key = "838113558438455", 
